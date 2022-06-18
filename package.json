@@ -7,7 +7,7 @@
     "server": "nodemon index --ignore 'unik/'",
     "client": "npm run serve --prefix unik",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "build": "concurrently \"npm install --prefix unik\" \"npm run build --prefix unik\"",
+    "build": "npm install --prefix unik && npm run build --prefix unik",
     "start": "cross-env NODE_ENV=production PORT=3001 node index"
   },
   "author": "",
