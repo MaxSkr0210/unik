@@ -107,6 +107,7 @@ nav {
 @media screen and (max-width: 1000px) {
   nav {
     .asdf {
+      /* */
       display: none;
       position: absolute;
       top: 175px;
