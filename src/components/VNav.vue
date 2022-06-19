@@ -5,8 +5,8 @@
       <div id="menu">
         <ul>
           <li>Новости</li>
-          <li>Поиск единомышлеников</li>
-          <li>Контакты</li>
+          <li>Твоя UNIKкнижка</li>
+          <li>О нас</li>
         </ul>
       </div>
       <div id="registration">
