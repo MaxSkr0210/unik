@@ -4,7 +4,6 @@ import New from "../interfaces/news";
 import User from "../interfaces/user";
 
 const serverUrl = "http://95.213.243.195:3000/";
-
 export default createStore({
   state: {
     news: [] as New[],
