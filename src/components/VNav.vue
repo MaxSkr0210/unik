@@ -4,9 +4,10 @@
     <div class="asdf">
       <div id="menu">
         <ul>
-          <li>Новости</li>
-          <li>Твоя UNIKкнижка</li>
+          <li>UNIKкнижка</li>
+          <li><router-link to="/news">Новости</router-link></li>
           <li>О нас</li>
+          <li>Поиск единомышленников</li>
         </ul>
       </div>
       <div id="registration">
@@ -72,7 +73,6 @@ nav {
       background: #fff;
       color: #222bff;
       border: 1px solid #222bff;
-      //   box-shadow: #222bff 5px 5px;
     }
   }
   .menuBtn {

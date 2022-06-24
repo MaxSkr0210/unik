@@ -3,10 +3,10 @@
 </template>
 
 <style lang="scss">
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap");
+@import "./assets/fonts.scss";
 
 * {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Clear Sans", sans-serif;
   font-size: 16px;
 }
 
