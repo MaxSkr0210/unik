@@ -19,6 +19,7 @@
   border: 1px solid #222bff;
   border-radius: 8px;
   margin-bottom: 20px;
+  padding: 15px;
   display: flex;
   .img {
     width: 30%;
