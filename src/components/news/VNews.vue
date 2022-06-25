@@ -20,7 +20,7 @@
   border-radius: 8px;
   margin-bottom: 20px;
   display: flex;
-  p15 .img {
+  .img {
     width: 30%;
     img {
       width: 80%;
