@@ -7,7 +7,6 @@
 
 * {
   font-family: "Clear Sans", sans-serif;
-  font-size: 16px;
 }
 
 body {
@@ -22,5 +21,10 @@ body {
   border-radius: 8px;
   color: #fff;
   cursor: pointer;
+}
+
+@for $i from 1 to 6 {
+  h#{$i} {
+  }
 }
 </style>
