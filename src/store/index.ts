@@ -3,7 +3,7 @@ import axios from "axios";
 import New from "../interfaces/news";
 import User from "../interfaces/user";
 
-const serverUrl = "https://localhost:3000/";
+const serverUrl = "https://95.213.243.195:3000/";
 export default createStore({
   state: {
     news: [] as New[],
