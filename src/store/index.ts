@@ -3,6 +3,14 @@ import axios from "axios";
 import New from "../interfaces/news";
 import User from "../interfaces/user";
 
+let server;
+
+if (process.env.NODE_ENV === "development") {
+  server = "https://localhost:3000/";
+} else {
+  server = "https://95.213.243.195:3000/";
+}
+
 export default createStore({
   state: {
     news: [] as New[],
