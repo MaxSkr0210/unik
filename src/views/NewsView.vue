@@ -33,7 +33,6 @@ export default defineComponent({
     ...mapActions(["getAllNews"]),
   },
   mounted() {
-    console.log(process.env);
     this.getAllNews();
   },
 });

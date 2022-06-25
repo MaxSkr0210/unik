@@ -3,7 +3,6 @@ import axios from "axios";
 import New from "../interfaces/news";
 import User from "../interfaces/user";
 
-const serverUrl = "https://95.213.243.195:3000/";
 export default createStore({
   state: {
     news: [] as New[],
@@ -27,18 +26,20 @@ export default createStore({
   },
   actions: {
     async getAllNews({ commit }) {
-      const news = await axios.get(`${serverUrl}news`);
+      console.log(process.env);
+
+      const news = await axios.get(`${process.env.VUE_APP_SERVER}news`);
       const data = await news.data;
 
       commit("updateNews", data);
     },
 
-    async getAllUsers({ commit }) {
-      const news = await axios.get(`${serverUrl}users`);
-      const data = await news.data;
+    // async getAllUsers({ commit }) {
+    //   const news = await axios.get(`${serverUrl}users`);
+    //   const data = await news.data;
 
-      commit("updateUsers", data);
-    },
+    //   commit("updateUsers", data);
+    // },
   },
   modules: {},
 });
