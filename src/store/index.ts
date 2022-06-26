@@ -3,7 +3,7 @@ import axios from "axios";
 import New from "../interfaces/news";
 import User from "../interfaces/user";
 
-let server;
+let server = "";
 
 if (process.env.NODE_ENV === "development") {
   server = "https://localhost:3000/";
@@ -43,7 +43,7 @@ export default createStore({
     async getAllNews({ commit }) {
       console.log(process.env);
 
-      const news = await axios.get(`${process.env.VUE_APP_SERVER}news`);
+      const news = await axios.get(`${server}news`);
       const data = await news.data;
 
       commit("updateNews", data);
