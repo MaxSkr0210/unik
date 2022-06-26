@@ -14,6 +14,7 @@ if (process.env.NODE_ENV === "development") {
 export default createStore({
   state: {
     news: [] as New[],
+    post: {} as New,
     users: [] as User[],
   },
   getters: {
@@ -23,13 +24,19 @@ export default createStore({
     getUsers(state) {
       return state.users;
     },
+    getOneNews(state) {
+      return state.post;
+    },
   },
   mutations: {
-    updateNews(state, news) {
+    updateNews(state, news: New[]) {
       state.news = news;
     },
-    updateUsers(state, users) {
+    updateUsers(state, users: User[]) {
       state.users = users;
+    },
+    getNews(state, news: New) {
+      state.post = news;
     },
   },
   actions: {
@@ -40,6 +47,13 @@ export default createStore({
       const data = await news.data;
 
       commit("updateNews", data);
+    },
+
+    async getNewsById({ commit }, id: number) {
+      const res = await axios.get(`${process.env.VUE_APP_SERVER}news/${id}`);
+      const data = await res.data;
+
+      commit("getNews", data);
     },
 
     // async getAllUsers({ commit }) {

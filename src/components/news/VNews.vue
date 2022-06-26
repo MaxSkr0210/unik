@@ -4,7 +4,9 @@
       <img :src="`${public}img/456.png`" alt="img" />
     </div>
     <div class="info">
-      <h2>{{ post.title }}</h2>
+      <h2>
+        <router-link :to="`/news/${post.id}`">{{ post.title }}</router-link>
+      </h2>
       <div class="intro">
         {{ post.introduction }}
       </div>
