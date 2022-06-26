@@ -1,6 +1,8 @@
 <template>
   <nav>
-    <div id="logo"><span>U</span>NIK</div>
+    <div id="logo">
+      <router-link to="/"> <span>U</span>NIK </router-link>
+    </div>
     <div class="asdf">
       <div id="menu">
         <ul>
@@ -37,7 +39,9 @@ nav {
   justify-content: space-between;
   #logo {
     font-size: 30px;
-    color: #222bff;
+    a {
+      color: #222bff;
+    }
     span {
       color: #ff1515;
       font-size: 30px;
@@ -50,7 +54,7 @@ nav {
     width: 70%;
   }
   #menu {
-    width: 45%;
+    width: 55%;
     ul {
       width: 100%;
     }

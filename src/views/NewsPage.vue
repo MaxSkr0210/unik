@@ -1,5 +1,5 @@
 <template>
-  <div class="newsPage">
+  <div class="newsPage main">
     {{ getOneNews }}
   </div>
 </template>
