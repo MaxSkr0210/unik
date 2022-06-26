@@ -44,7 +44,7 @@ export default createStore({
       console.log(process.env);
 
       const news = await axios.get(
-        `${server || process.env.VUE_APP_SERVRE}news`
+        `${process.env.VUE_APP_SERVER || server}news`
       );
       const data = await news.data;
 
@@ -53,7 +53,7 @@ export default createStore({
 
     async getNewsById({ commit }, id: number) {
       const res = await axios.get(
-        `${server || process.env.VUE_APP_SERVRE}news/${id}`
+        `${process.env.VUE_APP_SERVER || server}news/${id}`
       );
       const data = await res.data;
 
@@ -62,7 +62,7 @@ export default createStore({
 
     async getAllUsers({ commit }) {
       const news = await axios.get(
-        `${server || process.env.VUE_APP_SERVRE}users`
+        `${process.env.VUE_APP_SERVER || server}users`
       );
       const data = await news.data;
 
