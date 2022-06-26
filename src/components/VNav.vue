@@ -6,10 +6,10 @@
     <div class="asdf">
       <div id="menu">
         <ul>
-          <li>UNIKкнижка</li>
           <li><router-link to="/news">Новости</router-link></li>
-          <li>О нас</li>
           <li>Поиск единомышленников</li>
+          <li>UNIKкнижка</li>
+          <li>О нас</li>
         </ul>
       </div>
       <div id="registration">
