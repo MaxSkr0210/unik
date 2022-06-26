@@ -43,25 +43,31 @@ export default createStore({
     async getAllNews({ commit }) {
       console.log(process.env);
 
-      const news = await axios.get(`${server}news`);
+      const news = await axios.get(
+        `${server || process.env.VUE_APP_SERVRE}news`
+      );
       const data = await news.data;
 
       commit("updateNews", data);
     },
 
     async getNewsById({ commit }, id: number) {
-      const res = await axios.get(`${process.env.VUE_APP_SERVER}news/${id}`);
+      const res = await axios.get(
+        `${server || process.env.VUE_APP_SERVRE}news/${id}`
+      );
       const data = await res.data;
 
       commit("getNews", data);
     },
 
-    // async getAllUsers({ commit }) {
-    //   const news = await axios.get(`${serverUrl}users`);
-    //   const data = await news.data;
+    async getAllUsers({ commit }) {
+      const news = await axios.get(
+        `${server || process.env.VUE_APP_SERVRE}users`
+      );
+      const data = await news.data;
 
-    //   commit("updateUsers", data);
-    // },
+      commit("updateUsers", data);
+    },
   },
   modules: {},
 });
