@@ -1,15 +1,20 @@
 import { createStore } from "vuex";
-import axios from "axios";
+import Axios from "axios";
 import New from "../interfaces/news";
 import User from "../interfaces/user";
 
 let server = "";
 
 if (process.env.NODE_ENV === "development") {
-  server = "https://localhost:3000/";
+  server = "http://localhost:3000/";
 } else {
   server = "https://95.213.243.195:3000/";
 }
+
+const axios = Axios.create({
+  withCredentials: true,
+  baseURL: process.env.VUE_APP_SERVER || server,
+});
 
 export default createStore({
   state: {
@@ -40,33 +45,35 @@ export default createStore({
     },
   },
   actions: {
+    async registration({ commit }, newUser) {
+      newUser.role = "user";
+      const res = await axios.post(`auth/registration`, {
+        ...newUser,
+      });
+    },
     async getAllNews({ commit }) {
-      console.log(process.env);
-
-      const news = await axios.get(
-        `${process.env.VUE_APP_SERVER || server}news`
-      );
+      const news = await axios.get(`news`);
       const data = await news.data;
 
       commit("updateNews", data);
     },
 
     async getNewsById({ commit }, id: number) {
-      const res = await axios.get(
-        `${process.env.VUE_APP_SERVER || server}news/${id}`
-      );
+      const res = await axios.get(`news/${id}`);
       const data = await res.data;
 
       commit("getNews", data);
     },
 
     async getAllUsers({ commit }) {
-      const news = await axios.get(
-        `${process.env.VUE_APP_SERVER || server}users`
-      );
+      const news = await axios.get(`users`);
       const data = await news.data;
 
       commit("updateUsers", data);
+    },
+    async getUserByToken({ commit }, token: string) {
+      const res = await axios.get(`/users/${token}`);
+      const data = await res.data;
     },
   },
   modules: {},

@@ -12,13 +12,15 @@
           <li>О нас</li>
         </ul>
       </div>
-      <div id="registration">
+      <div id="registration" v-if="!isAuth">
         <ul>
           <li>
-            <button class="btn">Регистрация</button>
+            <router-link to="/registration" class="btn"
+              >Регистрация</router-link
+            >
           </li>
           <li>
-            <button class="btn">Вход</button>
+            <router-link to="/registration" class="btn">Войти</router-link>
           </li>
         </ul>
       </div>
@@ -149,13 +151,17 @@ nav {
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import { mapActions, mapGetters } from "vuex";
+
 export default defineComponent({
   data() {
     return {
       open: false,
+      isAuth: false,
     };
   },
   methods: {
+    ...mapActions([""]),
     OpenMenu() {
       const menu: HTMLElement = document.getElementsByClassName(
         "asdf"
