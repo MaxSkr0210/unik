@@ -6,7 +6,7 @@ import User from "../interfaces/user";
 let server = "";
 
 if (process.env.NODE_ENV === "development") {
-  server = "http://localhost:3000/";
+  server = "https://localhost:3000/";
 } else {
   server = "https://95.213.243.195:3000/";
 }

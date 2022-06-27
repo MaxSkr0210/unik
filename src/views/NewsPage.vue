@@ -28,8 +28,6 @@ export default defineComponent({
     ...mapGetters(["getOneNews"]),
   },
   mounted() {
-    console.log(this.$route);
-
     this.getNewsById(this.id);
   },
 });

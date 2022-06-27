@@ -69,10 +69,5 @@ export default defineComponent({
       this.registration(newUser);
     },
   },
-  beforeRouteEnter(to, from, next) {
-    console.log(to);
-    console.log(from);
-    next();
-  },
 });
 </script>
