@@ -22,11 +22,5 @@ export default defineComponent({
   computed: {
     ...mapGetters(["getNews"]),
   },
-  methods: {
-    ...mapActions(["getAllNews"]),
-  },
-  mounted() {
-    this.getAllNews();
-  },
 });
 </script>

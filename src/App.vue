@@ -6,11 +6,11 @@
 @import "./assets/fonts.scss";
 
 * {
-  font-family: "Clear Sans", sans-serif;
   box-sizing: border-box;
 }
 
 body {
+  font-family: "Clear Sans", sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -34,3 +34,17 @@ a {
   text-decoration: none;
 }
 </style>
+
+<script lang="ts">
+import { defineComponent } from "vue";
+import { mapActions } from "vuex";
+
+export default defineComponent({
+  methods: {
+    ...mapActions(["getAllNews"]),
+  },
+  mounted() {
+    this.getAllNews();
+  },
+});
+</script>

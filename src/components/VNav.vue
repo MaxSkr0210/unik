@@ -3,27 +3,13 @@
     <div id="logo">
       <router-link to="/"> <span>U</span>NIK </router-link>
     </div>
-    <div class="asdf">
-      <div id="menu">
-        <ul>
-          <li><router-link to="/news">Новости</router-link></li>
-          <li>Поиск единомышленников</li>
-          <li>UNIKкнижка</li>
-          <li>О нас</li>
-        </ul>
-      </div>
-      <div id="registration" v-if="!isAuth">
-        <ul>
-          <li>
-            <router-link to="/registration" class="btn"
-              >Регистрация</router-link
-            >
-          </li>
-          <li>
-            <router-link to="/registration" class="btn">Войти</router-link>
-          </li>
-        </ul>
-      </div>
+    <div id="menu">
+      <ul>
+        <li><router-link to="/news">Новости</router-link></li>
+        <li>Поиск единомышленников</li>
+        <li>UNIKнижка</li>
+        <li>О нас</li>
+      </ul>
     </div>
     <div class="menuBtn">
       <button class="btn" @click="OpenMenu()">menu</button>

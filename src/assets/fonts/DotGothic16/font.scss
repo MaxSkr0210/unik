@@ -1,0 +1,13 @@
+@font-face {
+  font-family: "DotGothic16";
+  src: url("~@/assets/fonts/DotGothic16/DotGothic16-Regular.eot");
+  src: local("DotGothic16 Regular"), local("DotGothic16-Regular"),
+    url("~@/assets/fonts/DotGothic16/DotGothic16-Regular.eot?#iefix")
+      format("embedded-opentype"),
+    url("~@/assets/fonts/DotGothic16/DotGothic16-Regular.woff2") format("woff2"),
+    url("~@/assets/fonts/DotGothic16/DotGothic16-Regular.woff") format("woff"),
+    url("~@/assets/fonts/DotGothic16/DotGothic16-Regular.ttf")
+      format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
