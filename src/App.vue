@@ -44,7 +44,7 @@ export default defineComponent({
     ...mapActions(["getAllNews"]),
   },
   mounted() {
-    this.getAllNews();
+    // this.getAllNews();
   },
 });
 </script>

@@ -66,7 +66,7 @@ export default defineComponent({
         email: this.email,
         password: this.password,
       };
-      this.registration(newUser);
+      // this.registration(newUser);
     },
   },
 });
