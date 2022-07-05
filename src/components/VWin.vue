@@ -4,9 +4,9 @@
     <div class="info">
       <div class="img">
         <unik></unik>
+        <div class="square first"></div>
+        <div class="square second"></div>
       </div>
-      <div class="square first"></div>
-      <div class="square second"></div>
       <div class="text">
         <p>После регистрации ты сможешь:</p>
         <ul>
@@ -36,6 +36,7 @@
   }
   .img {
     width: 40%;
+    position: relative;
   }
   .square {
     background: rgba(255, 0, 184, 0.75);
@@ -47,7 +48,7 @@
     height: 173px;
     width: 228px;
     top: 0;
-    left: -1230px;
+    right: 1530px;
   }
   .second {
     height: 186px;
@@ -85,6 +86,10 @@
     flex-direction: row;
     justify-content: space-between;
   }
+  .righ {
+    transition-duration: 1.5s;
+    transition-property: right;
+  }
   .right {
     transition-duration: 1.5s;
     transition-property: left;
@@ -103,10 +108,10 @@ export default defineComponent({
   mounted() {
     const firstSquare = document.querySelector(".first") as HTMLElement;
     const secondSquare = document.querySelector(".second") as HTMLElement;
-    firstSquare.className += " right";
+    firstSquare.className += " righ";
     secondSquare.className += " right";
     setTimeout(() => {
-      firstSquare.style.left = "230px";
+      firstSquare.style.right = "0px";
       secondSquare.style.left = "0px";
     }, 0);
   },
