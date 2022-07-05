@@ -7,14 +7,13 @@
       </div>
       <div class="square first"></div>
       <div class="square second"></div>
-
       <div class="text">
         <p>После регистрации ты сможешь:</p>
         <ul>
           <li>получать анонсы топовых мероприятий и участвовать в них</li>
           <li>искать единомышленников по всей России</li>
           <li>
-            Заполнять свою UniKнижку и выигрывать крутые призы от партнеров
+            заполнять свою UniKнижку и выигрывать крутые призы от партнеров
           </li>
         </ul>
         <div class="buttons">
@@ -48,13 +47,13 @@
     height: 173px;
     width: 228px;
     top: 0;
-    left: 230px;
+    left: -1230px;
   }
   .second {
     height: 186px;
     width: 275px;
     bottom: 0;
-    left: 0;
+    left: -900px;
   }
   .text {
     width: 55%;
@@ -65,9 +64,9 @@
     position: absolute;
     bottom: 8px;
     .button {
-      background: #ff00b8;
+      background: rgba(255, 0, 184, 0.75);
       color: #fff;
-      border: 1px solid #ff00b8;
+      border: 1px solid rgba(255, 0, 184, 0.75);
       border-radius: 8px;
       padding: 10px 15px;
       font-size: 18px;
@@ -80,12 +79,15 @@
       }
     }
   }
-
   .info {
     position: relative;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+  }
+  .right {
+    transition-duration: 1.5s;
+    transition-property: left;
   }
 }
 </style>
@@ -97,6 +99,16 @@ import unik from "@/components/svg/image.vue";
 export default defineComponent({
   components: {
     unik,
+  },
+  mounted() {
+    const firstSquare = document.querySelector(".first") as HTMLElement;
+    const secondSquare = document.querySelector(".second") as HTMLElement;
+    firstSquare.className += " right";
+    secondSquare.className += " right";
+    setTimeout(() => {
+      firstSquare.style.left = "230px";
+      secondSquare.style.left = "0px";
+    }, 0);
   },
 });
 </script>
