@@ -45,6 +45,7 @@
   .buttons {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     position: relative;
     bottom: 8px;
     .button {
@@ -55,10 +56,11 @@
       padding: 10px 15px;
       font-size: 18px;
       font-family: "DotGothic16", sans-serif;
-      margin-right: 20px;
+      margin-bottom: 10px;
+      height: 45.2px;
       transition: color 0.6s ease-in-out;
       &:last-child {
-        margin-right: 0;
+        margin: 0;
       }
       &:hover {
         background: #fff;
@@ -94,7 +96,7 @@
   }
 }
 
-@media screen and (max-width: 1036px) {
+@media screen and (max-width: 1048px) {
   #window {
     h2 {
       font-size: 50px;
