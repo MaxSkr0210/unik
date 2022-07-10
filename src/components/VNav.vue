@@ -36,13 +36,9 @@ nav {
       font-weight: bold;
     }
   }
-  .asdf {
-    display: flex;
-    justify-content: space-between;
-    width: 70%;
-  }
   #menu {
     width: 55%;
+    background: #fff;
     ul {
       width: 100%;
     }
@@ -98,8 +94,7 @@ nav {
 
 @media screen and (max-width: 1000px) {
   nav {
-    .asdf {
-      /* */
+    #menu {
       display: none;
       position: absolute;
       top: 175px;
@@ -149,9 +144,7 @@ export default defineComponent({
   methods: {
     ...mapActions([""]),
     OpenMenu() {
-      const menu: HTMLElement = document.getElementsByClassName(
-        "asdf"
-      )[0] as HTMLElement;
+      const menu = document.querySelector("#menu") as HTMLElement;
       if (this.open) {
         menu.style.display = "none";
         this.open = !this.open;
