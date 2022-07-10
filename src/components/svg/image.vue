@@ -37,14 +37,14 @@ svg {
   width: 100%;
 }
 .first {
-  height: 41%;
-  width: 50%;
+  height: 40%;
+  width: 48%;
   top: 0;
   right: 1530px;
 }
 .second {
   height: 44%;
-  width: 61%;
+  width: 60%;
   bottom: 0;
   left: -900px;
 }
