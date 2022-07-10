@@ -1,7 +1,5 @@
 <template>
   <svg
-    width="450"
-    height="420"
     viewBox="0 0 575 531"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -28,4 +26,57 @@
       />
     </defs>
   </svg>
+  <div class="square first"></div>
+  <div class="square second"></div>
 </template>
+
+<style lang="scss" scoped>
+svg {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+.first {
+  height: 41%;
+  width: 50%;
+  top: 0;
+  right: 1530px;
+}
+.second {
+  height: 44%;
+  width: 61%;
+  bottom: 0;
+  left: -900px;
+}
+.square {
+  background: rgba(255, 0, 184, 0.75);
+  opacity: 0.5;
+  filter: blur(1px);
+  position: absolute;
+  z-index: 1;
+}
+.righ {
+  transition-duration: 1.5s;
+  transition-property: right;
+}
+.right {
+  transition-duration: 1.5s;
+  transition-property: left;
+}
+</style>
+
+<script lang="ts">
+import { defineComponent } from "vue";
+export default defineComponent({
+  mounted() {
+    const firstSquare = document.querySelector(".first") as HTMLElement;
+    const secondSquare = document.querySelector(".second") as HTMLElement;
+    firstSquare.className += " righ";
+    secondSquare.className += " right";
+    setTimeout(() => {
+      firstSquare.style.right = "0px";
+      secondSquare.style.left = "0px";
+    }, 0);
+  },
+});
+</script>

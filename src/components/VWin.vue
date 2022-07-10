@@ -4,8 +4,6 @@
     <div class="info">
       <div class="img">
         <unik></unik>
-        <div class="square first"></div>
-        <div class="square second"></div>
       </div>
       <div class="text">
         <p>После регистрации ты сможешь:</p>
@@ -35,34 +33,19 @@
     margin-bottom: 10px;
   }
   .img {
-    width: 40%;
+    width: 460px;
     position: relative;
   }
-  .square {
-    background: rgba(255, 0, 184, 0.75);
-    opacity: 0.5;
-    filter: blur(1px);
-    position: absolute;
-  }
-  .first {
-    height: 173px;
-    width: 228px;
-    top: 0;
-    right: 1530px;
-  }
-  .second {
-    height: 186px;
-    width: 275px;
-    bottom: 0;
-    left: -900px;
-  }
+
   .text {
     width: 55%;
     font-size: 21px;
     position: relative;
   }
   .buttons {
-    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
     bottom: 8px;
     .button {
       background: rgba(255, 0, 184, 0.75);
@@ -74,6 +57,9 @@
       font-family: "DotGothic16", sans-serif;
       margin-right: 20px;
       transition: color 0.6s ease-in-out;
+      &:last-child {
+        margin-right: 0;
+      }
       &:hover {
         background: #fff;
         color: #ff00b8;
@@ -84,15 +70,49 @@
     position: relative;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
   }
-  .righ {
-    transition-duration: 1.5s;
-    transition-property: right;
+}
+
+@media screen and (max-width: 1362px) {
+  #window {
+    h2 {
+      font-size: 60px;
+    }
+    .img {
+      width: 350px;
+    }
+    .text {
+      font-size: 16px;
+    }
+    .buttons {
+      .button {
+        font-size: 16px;
+      }
+    }
   }
-  .right {
-    transition-duration: 1.5s;
-    transition-property: left;
+}
+
+@media screen and (max-width: 1000px) {
+  #window {
+    h2 {
+      font-size: 50px;
+    }
+    .img {
+      width: 350px;
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
+    .text {
+      width: 100%;
+      font-size: 16px;
+    }
+    .buttons {
+      .button {
+        font-size: 16px;
+      }
+    }
   }
 }
 </style>
@@ -100,20 +120,9 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import unik from "@/components/svg/image.vue";
-
 export default defineComponent({
   components: {
     unik,
-  },
-  mounted() {
-    const firstSquare = document.querySelector(".first") as HTMLElement;
-    const secondSquare = document.querySelector(".second") as HTMLElement;
-    firstSquare.className += " righ";
-    secondSquare.className += " right";
-    setTimeout(() => {
-      firstSquare.style.right = "0px";
-      secondSquare.style.left = "0px";
-    }, 0);
   },
 });
 </script>
