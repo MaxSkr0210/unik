@@ -84,7 +84,7 @@ export default defineComponent({
         };
         await this.login(user);
       } catch (error) {
-        this.error = error.response.data.message;
+        //this.error = error.response.data.message;
       }
     },
   },

@@ -111,7 +111,7 @@ export default defineComponent({
           this.error = "Пароли не совпадают";
         }
       } catch (error) {
-        this.error = error.response.data.message;
+        //this.error = error.response.data.message;
       }
     },
   },
