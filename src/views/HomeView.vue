@@ -5,7 +5,7 @@
       <!-- <VSlider :news="getNews"></VSlider> -->
       <!-- <button class="button">Зарегистрироваться</button>
       <button class="button">Войти</button> -->
-      <VWin @register="registration" @login="log" v-if="user !== null"></VWin>
+      <VWin @register="registration" @login="log" v-if="user === null"></VWin>
       <div class="W" v-if="reg || login">
         <VRegister v-if="reg" @close="closeWindow"></VRegister>
         <VLogin v-if="login" @close="closeWindow"></VLogin>
