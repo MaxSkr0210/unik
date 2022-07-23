@@ -5,12 +5,25 @@
       <!-- <VSlider :news="getNews"></VSlider> -->
       <!-- <button class="button">Зарегистрироваться</button>
       <button class="button">Войти</button> -->
-      <VWin></VWin>
+      <VWin @register="registration" @login="log"></VWin>
+      <div class="W" v-if="reg || login">
+        <VRegister v-if="reg"></VRegister>
+        <VLogin v-if="login"></VLogin>
+      </div>
     </div>
   </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.W {
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+</style>
 
 <script lang="ts">
 import { defineComponent } from "vue";
@@ -18,6 +31,8 @@ import { mapGetters } from "vuex";
 import VNav from "@/components/VNav.vue";
 import VSlider from "@/components/VSlider.vue";
 import VWin from "@/components/VWin.vue";
+import VRegister from "@/components/VRegister.vue";
+import VLogin from "@/components/VLogin.vue";
 
 export default defineComponent({
   name: "HomeView",
@@ -25,14 +40,25 @@ export default defineComponent({
     VNav,
     VSlider,
     VWin,
+    VRegister,
+    VLogin,
   },
   data() {
     return {
-      registration: false,
+      reg: false,
+      login: false,
     };
   },
   computed: {
     ...mapGetters(["getNews"]),
+  },
+  methods: {
+    registration(data: boolean) {
+      this.reg = data;
+    },
+    log(data: boolean) {
+      this.login = data;
+    },
   },
 });
 </script>

@@ -2,8 +2,7 @@ import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import NewsPage from "../views/NewsPage.vue";
 import NewsView from "../views/NewsView.vue";
-import Login from "../views/Login.vue";
-import Register from "../views/Register.vue";
+import LkView from "../views/LkView.vue";
 import { isAuth } from "./isAuth";
 
 const routes: Array<RouteRecordRaw> = [
@@ -23,15 +22,9 @@ const routes: Array<RouteRecordRaw> = [
     component: NewsPage,
   },
   {
-    path: "/login",
-    name: "login",
-    component: Login,
-    beforeEnter: isAuth,
-  },
-  {
-    path: "/registration",
-    name: "register",
-    component: Register,
+    path: "/lk",
+    name: "Lk",
+    component: LkView,
     beforeEnter: isAuth,
   },
 ];

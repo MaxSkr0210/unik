@@ -15,8 +15,10 @@
           </li>
         </ul>
         <div class="buttons">
-          <button class="button">Зарегистрироваться</button>
-          <button class="button">Войти</button>
+          <button class="button" @click="$emit('register', true)">
+            Зарегистрироваться
+          </button>
+          <button class="button" @click="$emit('login', true)">Войти</button>
         </div>
       </div>
     </div>
@@ -57,7 +59,6 @@
       font-size: 18px;
       font-family: "DotGothic16", sans-serif;
       margin-bottom: 10px;
-      height: 45.2px;
       transition: color 0.6s ease-in-out;
       &:last-child {
         margin: 0;
@@ -126,5 +127,6 @@ export default defineComponent({
   components: {
     unik,
   },
+  methods: {},
 });
 </script>

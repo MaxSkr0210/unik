@@ -21,6 +21,7 @@ export default createStore({
     news: [] as New[],
     post: {} as New,
     users: [] as User[],
+    user: {} as User,
   },
   getters: {
     getNews(state) {
@@ -31,6 +32,9 @@ export default createStore({
     },
     getOneNews(state) {
       return state.post;
+    },
+    getUser(state) {
+      return state.user;
     },
   },
   mutations: {
@@ -43,6 +47,9 @@ export default createStore({
     getNews(state, news: New) {
       state.post = news;
     },
+    updateUser(state, user: User) {
+      state.user = user;
+    },
   },
   actions: {
     async registration({ commit }, newUser) {
@@ -50,6 +57,16 @@ export default createStore({
       const res = await axios.post(`auth/registration`, {
         ...newUser,
       });
+
+      const data = res.data;
+      commit("updateUser", data);
+    },
+    async login({ commit }, user) {
+      const res = await axios.post(`auth/login`, {
+        ...user,
+      });
+      const data = res.data;
+      commit("updateUser", data);
     },
     async getAllNews({ commit }) {
       const news = await axios.get(`news`);
@@ -71,9 +88,11 @@ export default createStore({
 
       commit("updateUsers", data);
     },
-    async getUserByToken({ commit }, token: string) {
-      const res = await axios.get(`/users/${token}`);
+    async getUserByToken({ commit }) {
+      const res = await axios.get(`/auth/token`);
       const data = await res.data;
+
+      commit("updateUser", data);
     },
   },
   modules: {},

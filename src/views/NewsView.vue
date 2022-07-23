@@ -16,11 +16,14 @@ export default defineComponent({
     VNews,
     VNav,
   },
-  data() {
-    return {};
-  },
   computed: {
     ...mapGetters(["getNews"]),
+  },
+  methods: {
+    ...mapActions(["getAllNews"]),
+  },
+  mounted() {
+    this.getAllNews();
   },
 });
 </script>

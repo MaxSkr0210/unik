@@ -15,13 +15,21 @@ body {
   padding: 0;
 }
 
-.btn {
-  border: 1px solid #fff;
-  background: #222bff;
-  padding: 10px 15px;
-  border-radius: 8px;
+input,
+button,
+a {
+  outline: none;
+}
+
+.button {
+  background: rgb(255, 0, 184);
   color: #fff;
-  cursor: pointer;
+  border: 1px solid rgb(255, 0, 184);
+  border-radius: 8px;
+  padding: 10px 15px;
+  font-size: 18px;
+  margin-bottom: 10px;
+  transition: color 0.6s ease-in-out;
 }
 
 .main {
@@ -41,10 +49,10 @@ import { mapActions } from "vuex";
 
 export default defineComponent({
   methods: {
-    ...mapActions(["getAllNews"]),
+    ...mapActions(["getUserByToken"]),
   },
   mounted() {
-    // this.getAllNews();
+    this.getUserByToken();
   },
 });
 </script>
