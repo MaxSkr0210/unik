@@ -25,7 +25,13 @@ const routes: Array<RouteRecordRaw> = [
     path: "/lk",
     name: "Lk",
     component: LkView,
-    beforeEnter: isAuth,
+    beforeEnter: (to, from, next) => {
+      if (localStorage.getItem("user") != null) {
+        next();
+      } else {
+        next("/");
+      }
+    },
   },
 ];
 

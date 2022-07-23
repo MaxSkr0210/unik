@@ -6,7 +6,7 @@ import User from "../interfaces/user";
 let server = "";
 
 if (process.env.NODE_ENV === "development") {
-  server = "https://localhost:3000/";
+  server = "https://localhost:3001/";
 } else {
   server = "https://unik-server.site/";
 }
@@ -49,6 +49,7 @@ export default createStore({
     },
     updateUser(state, user: User) {
       state.user = user;
+      console.log(state.user);
     },
   },
   actions: {
@@ -91,6 +92,8 @@ export default createStore({
     async getUserByToken({ commit }) {
       const res = await axios.get(`/auth/token`);
       const data = await res.data;
+
+      localStorage.setItem("user", data.role);
 
       commit("updateUser", data);
     },

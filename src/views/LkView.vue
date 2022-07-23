@@ -1,6 +1,7 @@
 <template>
   <div class="lk">
     {{ getUser }}
+    132
   </div>
 </template>
 
