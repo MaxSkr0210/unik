@@ -8,7 +8,7 @@ let server = "";
 if (process.env.NODE_ENV === "development") {
   server = "https://localhost:3000/";
 } else {
-  server = "https://95.213.243.195:3000/";
+  server = "https://unik-server.site/";
 }
 
 const axios = Axios.create({
