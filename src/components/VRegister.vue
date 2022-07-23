@@ -1,6 +1,9 @@
 <template>
   <div class="win">
     <div class="registration">
+      <div class="cros">
+        <i class="fa-solid fa-xmark" @click="$emit('close', false)"></i>
+      </div>
       <form>
         <h2>Регистрация</h2>
         <input
@@ -51,7 +54,11 @@
   .registration {
     background: #fff;
     border-radius: 10px;
-    padding: 0 15px 15px;
+    padding: 15px;
+    .cros {
+      text-align: right;
+      cursor: pointer;
+    }
     form {
       display: flex;
       flex-direction: column;

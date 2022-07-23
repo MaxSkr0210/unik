@@ -5,10 +5,14 @@
       <!-- <VSlider :news="getNews"></VSlider> -->
       <!-- <button class="button">Зарегистрироваться</button>
       <button class="button">Войти</button> -->
-      <VWin @register="registration" @login="log"></VWin>
+      <VWin
+        @register="registration"
+        @login="log"
+        v-if="user.length === 0"
+      ></VWin>
       <div class="W" v-if="reg || login">
-        <VRegister v-if="reg"></VRegister>
-        <VLogin v-if="login"></VLogin>
+        <VRegister v-if="reg" @close="closeWindow"></VRegister>
+        <VLogin v-if="login" @close="closeWindow"></VLogin>
       </div>
     </div>
   </div>
@@ -47,6 +51,7 @@ export default defineComponent({
     return {
       reg: false,
       login: false,
+      user: "",
     };
   },
   computed: {
@@ -59,6 +64,13 @@ export default defineComponent({
     log(data: boolean) {
       this.login = data;
     },
+    closeWindow(data: boolean) {
+      this.reg = data;
+      this.login = data;
+    },
+  },
+  mounted() {
+    this.user = localStorage.getItem("user") as string;
   },
 });
 </script>
