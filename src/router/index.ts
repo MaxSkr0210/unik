@@ -25,17 +25,17 @@ const routes: Array<RouteRecordRaw> = [
     path: "/lk",
     name: "Lk",
     component: LkView,
-    beforeEnter: (to, from, next) => {
-      if (
-        localStorage.getItem("user") != null &&
-        (localStorage.getItem("user") === "user" ||
-          localStorage.getItem("user") === "admin")
-      ) {
-        next();
-      } else {
-        next("/");
-      }
-    },
+    // beforeEnter: (to, from, next) => {
+    //   if (
+    //     localStorage.getItem("user") != null &&
+    //     (localStorage.getItem("user") === "user" ||
+    //       localStorage.getItem("user") === "admin")
+    //   ) {
+    //     next();
+    //   } else {
+    //     next("/");
+    //   }
+    // },
   },
 ];
 
