@@ -8,7 +8,7 @@
       <VWin
         @register="registration"
         @login="log"
-        v-if="user.length === 0"
+        v-if="user.length !== null"
       ></VWin>
       <div class="W" v-if="reg || login">
         <VRegister v-if="reg" @close="closeWindow"></VRegister>
