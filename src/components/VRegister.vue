@@ -114,11 +114,13 @@ export default defineComponent({
             password: this.password,
           };
           await this.registration(newUser);
+
+          this.$router.push("/lk");
         } else {
           this.error = "Пароли не совпадают";
         }
       } catch (error) {
-        //this.error = error.response.data.message;
+        console.log(error);
       }
     },
   },

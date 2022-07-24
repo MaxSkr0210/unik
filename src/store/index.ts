@@ -60,6 +60,7 @@ export default createStore({
       });
 
       const data = res.data;
+      localStorage.setItem("user", data.role);
       commit("updateUser", data);
     },
     async login({ commit }, user) {
@@ -67,6 +68,7 @@ export default createStore({
         ...user,
       });
       const data = res.data;
+      localStorage.setItem("user", data.role);
       commit("updateUser", data);
     },
     async getAllNews({ commit }) {
@@ -92,8 +94,6 @@ export default createStore({
     async getUserByToken({ commit }) {
       const res = await axios.get(`/auth/token`);
       const data = await res.data;
-
-      localStorage.setItem("user", data.role);
 
       commit("updateUser", data);
     },

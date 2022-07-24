@@ -90,8 +90,9 @@ export default defineComponent({
           password: this.password,
         };
         await this.login(user);
+        this.$router.push("/lk");
       } catch (error) {
-        //this.error = error.response.data.message;
+        console.log(error);
       }
     },
   },
