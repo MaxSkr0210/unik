@@ -92,10 +92,12 @@ export default createStore({
       commit("updateUsers", data);
     },
     async getUserByToken({ commit }) {
-      const res = await axios.get(`/auth/token`);
-      const data = await res.data;
+      if (localStorage.getItem("user") !== null) {
+        const res = await axios.get(`/auth/token`);
+        const data = await res.data;
 
-      commit("updateUser", data);
+        commit("updateUser", data);
+      }
     },
   },
   modules: {},
